@@ -1,0 +1,10 @@
+bases:
+  - ../../base
+
+commonLabels:
+  env: Prod
+
+namespace: nginx-prod
+
+patches:
+  - replica-count.yaml

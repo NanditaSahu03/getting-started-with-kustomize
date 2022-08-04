@@ -1,0 +1,12 @@
+bases:
+  - ../../base
+
+commonLabels:
+  env: Dev
+
+namespace: nginx-dev
+
+patches:
+  - replica-count.yaml
+
+

@@ -1,0 +1,12 @@
+bases:
+  - ../../base
+
+commonLabels:
+  env: Prod
+
+namespace: nginx-prod
+
+images:
+- name: nginx
+  newName: nginx
+  newTag: 1.22.0-alpine

@@ -1,0 +1,12 @@
+bases:
+  - ../../base
+
+commonLabels:
+  env: Dev
+
+namespace: nginx-dev
+
+images:
+- name: nginx
+  newName: nginx
+  newTag: stable-alpine

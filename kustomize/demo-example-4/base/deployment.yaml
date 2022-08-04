@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-app
+  name: nginx-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        volumeMounts:
+        - name: config-html
+          mountPath: /usr/share/nginx/html
+        - name: password
+          mountPath: /usr/share/nginx/secrets
+      volumes:
+      - name: config-html
+        configMap: 
+          name: example-configmap-html-1
+
+      - name: password
+        secret:
+          secretName: example-secret-1
